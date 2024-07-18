@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="543a3d06-2574-4fa1-8ae0-d7372e6ef99c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/connectDB.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/controller/signUpController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/models/userModel.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/signUpRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/errorHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/utils/validator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/slice/userSlice.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/api/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/client/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/signup/Signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/signup/Signup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +96,7 @@
       <updated>1721229834568</updated>
       <workItem from="1721229834680" duration="2256000" />
       <workItem from="1721232171460" duration="10522000" />
-      <workItem from="1721282342211" duration="27260000" />
+      <workItem from="1721282342211" duration="27872000" />
     </task>
     <servers />
   </component>
