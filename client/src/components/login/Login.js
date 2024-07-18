@@ -22,6 +22,7 @@ function Login() {
           method: "POST",
           body: JSON.stringify({ firstName, lastName, email }),
           headers: { "content-type": "application/json" },
+          credentials: "include",
         },
       );
       const data = await response.json();
@@ -45,6 +46,7 @@ function Login() {
           method: "post",
           body: JSON.stringify({ email, password }),
           headers: { "content-type": "application/json" },
+          credentials: "include",
         },
       );
       if (response.ok) {

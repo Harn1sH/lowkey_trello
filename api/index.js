@@ -12,15 +12,18 @@ require("dotenv").config();
 connectDB();
 
 //middlewares
-
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/signup", signUpRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logOutRouter);
+
+app.get("/tests", (req, res) => {
+  res.cookie("tests", "hi").json("ok");
+});
 
 app.listen(process.env.PORT || 4000, () =>
   console.log(`listening on port ${process.env.PORT}`),

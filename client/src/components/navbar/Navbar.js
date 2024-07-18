@@ -7,15 +7,7 @@ import { removeUser } from "../../utils/slice/userSlice";
 function Navbar() {
   const name = useSelector((store) => store.user.name);
   const dispatch = useDispatch();
-  const [redirect, setRedirect] = useState(true);
-
-  useEffect(() => {
-    if (name) {
-      setRedirect(false);
-    } else {
-      setRedirect(true);
-    }
-  }, [name]);
+  const [redirect, setRedirect] = useState(false);
 
   const handleLogOut = async () => {
     try {
@@ -64,7 +56,9 @@ function Navbar() {
       {name ? (
         <div>
           <button
-            onClick={handleLogOut}
+            onClick={() => {
+              handleLogOut();
+            }}
             className={
               "text-white bg-red-500 py-1 px-2 rounded-xl active:bg-red-600 duration-200"
             }
