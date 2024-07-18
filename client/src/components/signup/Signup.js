@@ -1,16 +1,80 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { passwordValidator } from "../../utils/validator";
+import { errorHandler } from "../../utils/errorHandler";
+import { GoogleLogin } from "@react-oauth/google";
+import { jwtDecode } from "jwt-decode";
 
 function Signup() {
-  const [firstname, setFirstname] = useState("");
+  const [firstName, setFirstName] = useState("");
   const [lastName, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [redirect, setRedirect] = useState(false);
 
+  useEffect(() => {
+    if (confirmPassword) {
+      passwordValidator(password, confirmPassword, setError);
+    }
+  }, [password, confirmPassword]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVICE_URL}/signup`,
+        {
+          method: "POST",
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            password,
+          }),
+          headers: { "content-type": "application/json" },
+        },
+      );
+      if (response.ok) {
+        setRedirect(true);
+      } else {
+        throw new Error(await response.json());
+      }
+    } catch (e) {
+      errorHandler(e);
+    }
+  };
   const handleChange = (e, fn) => {
     fn(e.target.value);
   };
+
+  if (redirect) {
+    return <Navigate to={"/login"} />;
+  }
+
+  const handleGoogleLogin = async (loginResponse) => {
+    const userData = jwtDecode(loginResponse.credential);
+    const { given_name: firstName, family_name: lastName, email } = userData;
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVICE_URL}/signup/google`,
+        {
+          method: "POST",
+          body: JSON.stringify({ firstName, lastName, email }),
+          headers: { "content-type": "application/json" },
+        },
+      );
+      if (response.ok) {
+        setRedirect(true);
+      } else {
+        throw new Error(await response.json());
+      }
+    } catch (e) {
+      errorHandler(e);
+    }
+  };
+
   return (
     <div
       className={
@@ -21,6 +85,7 @@ function Signup() {
         className={
           "border-2 w:6/12 md:w-4/12 lg:4/12  flex flex-col gap-y-5 border-blue-600 p-7 rounded-lg"
         }
+        onSubmit={handleSubmit}
       >
         <span className={"text-center text-blue-600 text-3xl font-bold"}>
           Signup
@@ -29,8 +94,8 @@ function Signup() {
           type="text"
           className={"border py-1 px-2 rounded-xl"}
           placeholder={"First Name"}
-          value={firstname}
-          onChange={(e) => handleChange(e, setFirstname)}
+          value={firstName}
+          onChange={(e) => handleChange(e, setFirstName)}
         />
         <input
           type="text"
@@ -62,14 +127,15 @@ function Signup() {
         />
         <div
           className={"text-red-500 font-semibold"}
-          hidden={password === confirmPassword}
+          hidden={error.length === 0}
         >
-          {`password doesn't match`}
+          {error}
         </div>
         <button
-          disabled={!(password === confirmPassword)}
+          type="submit"
+          disabled={error.length > 0}
           className={
-            password === confirmPassword
+            error.length === 0
               ? "border-2 transition-all duration-200 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2 rounded-xl text-blue-600"
               : "cursor-not-allowed border-2 transition-all duration-200 border-blue-600 py-1 px-2 rounded-xl text-blue-600"
           }
@@ -77,34 +143,7 @@ function Signup() {
           Register
         </button>
         <span className={"flex text-gray-500 justify-center"}>or</span>
-        <button className="">
-          <span className={"flex justify-center gap-x-3 items-center w-full"}>
-            <svg
-              className={"h-7"}
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid"
-              viewBox="0 0 256 262"
-            >
-              <path
-                fill="#4285F4"
-                d="M255.878 133.451c0-10.734-.871-18.567-2.756-26.69H130.55v48.448h71.947c-1.45 12.04-9.283 30.172-26.69 42.356l-.244 1.622 38.755 30.023 2.685.268c24.659-22.774 38.875-56.282 38.875-96.027"
-              ></path>
-              <path
-                fill="#34A853"
-                d="M130.55 261.1c35.248 0 64.839-11.605 86.453-31.622l-41.196-31.913c-11.024 7.688-25.82 13.055-45.257 13.055-34.523 0-63.824-22.773-74.269-54.25l-1.531.13-40.298 31.187-.527 1.465C35.393 231.798 79.49 261.1 130.55 261.1"
-              ></path>
-              <path
-                fill="#FBBC05"
-                d="M56.281 156.37c-2.756-8.123-4.351-16.827-4.351-25.82 0-8.994 1.595-17.697 4.206-25.82l-.073-1.73L15.26 71.312l-1.335.635C5.077 89.644 0 109.517 0 130.55s5.077 40.905 13.925 58.602l42.356-32.782"
-              ></path>
-              <path
-                fill="#EB4335"
-                d="M130.55 50.479c24.514 0 41.05 10.589 50.479 19.438l36.844-35.974C195.245 12.91 165.798 0 130.55 0 79.49 0 35.393 29.301 13.925 71.947l42.211 32.783c10.59-31.477 39.891-54.251 74.414-54.251"
-              ></path>
-            </svg>
-            Continue with Google
-          </span>
-        </button>
+        <GoogleLogin onSuccess={handleGoogleLogin} onError={errorHandler} />
         <div className={"flex justify-center space-x-2"}>
           <span>Already a member?</span>
           <Link to="/login">
