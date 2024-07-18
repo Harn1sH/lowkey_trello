@@ -4,7 +4,7 @@ import { errorHandler } from "../../utils/errorHandler";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../utils/slice/userSlice";
+import { addUser } from "../../utils/slice/user/userSlice";
 
 function Login() {
   const [email, setEmail] = useState("");

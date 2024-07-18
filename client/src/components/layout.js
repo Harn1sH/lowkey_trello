@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./navbar/Navbar";
 import { Navigate, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../utils/slice/userSlice";
+import { addUser } from "../utils/slice/user/userSlice";
 
 function Layout() {
   const dispatch = useDispatch();

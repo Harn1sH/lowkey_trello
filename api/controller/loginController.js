@@ -77,8 +77,8 @@ exports.validate = (req, res) => {
     const { token } = req.cookies;
     if (token) {
       jwtVerifier(token, res)
-        .then((data) => res.json(data))
-        .catch((err) => res.status(400).json(err));
+        .catch((err) => res.status(400).json(err))
+        .then((data) => res.json(data));
     } else res.json(null);
   }
 };

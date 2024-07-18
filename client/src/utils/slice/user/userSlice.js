@@ -1,4 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchUser } from "./reducer";
+import { errorHandler } from "../../errorHandler";
 
 const userSlice = createSlice({
   name: "user",
@@ -18,6 +20,17 @@ const userSlice = createSlice({
       state.email = null;
       state._id = null;
     },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchUser.fulfilled, (state, action) => {
+      if (action.payload) {
+        const { email, _id, firstName: name } = action.payload;
+        return { name, _id, email };
+      }
+    });
+    builder.addCase(fetchUser.rejected, (state, action) => {
+      errorHandler(action.payload);
+    });
   },
 });
 

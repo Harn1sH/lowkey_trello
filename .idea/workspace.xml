@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/Home.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/slice/user/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/loginController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/loginRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/loginRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/Login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/userSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/user/userSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/store/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/store/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +70,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Harnish\Documents\programs\Git\lowkey_trello\client\src\utils\slice\user" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/api">
       <method v="2" />
@@ -89,7 +95,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1721325139039</updated>
-      <workItem from="1721325140144" duration="10622000" />
+      <workItem from="1721325140144" duration="12416000" />
     </task>
     <servers />
   </component>
@@ -122,6 +128,18 @@
           <line>24</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
+          <line>78</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
+          <line>80</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

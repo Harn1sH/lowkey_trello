@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { errorHandler } from "../../utils/errorHandler";
-import { removeUser } from "../../utils/slice/userSlice";
+import { removeUser } from "../../utils/slice/user/userSlice";
 
 function Navbar() {
   const name = useSelector((store) => store.user.name);
