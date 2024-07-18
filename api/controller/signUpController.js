@@ -31,6 +31,7 @@ exports.google = async (req, res) => {
         lastName,
         email,
         isGoogle: true,
+        password: null,
       });
       res.json(userDoc);
     } else {

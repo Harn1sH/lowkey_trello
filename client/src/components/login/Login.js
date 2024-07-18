@@ -3,14 +3,17 @@ import { Link, Navigate } from "react-router-dom";
 import { errorHandler } from "../../utils/errorHandler";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../utils/slice/userSlice";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
+  const dispatch = useDispatch();
 
   const handleLogin = async (userResponse) => {
-    const userData = jwtDecode(userResponse);
+    const userData = jwtDecode(userResponse.credential);
     const { given_name: firstName, family_name: lastName, email } = userData;
     try {
       const response = await fetch(
@@ -23,9 +26,10 @@ function Login() {
       );
       const data = await response.json();
       if (response.ok) {
+        dispatch(addUser(data));
         setRedirect(true);
       } else {
-        throw new Error(await response.json());
+        throw new Error(data);
       }
     } catch (e) {
       errorHandler(e);
