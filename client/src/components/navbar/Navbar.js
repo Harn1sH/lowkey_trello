@@ -1,7 +1,43 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { errorHandler } from "../../utils/errorHandler";
+import { removeUser } from "../../utils/slice/userSlice";
 
 function Navbar() {
+  const name = useSelector((store) => store.user.name);
+  const dispatch = useDispatch();
+  const [redirect, setRedirect] = useState(true);
+
+  useEffect(() => {
+    if (name) {
+      setRedirect(false);
+    } else {
+      setRedirect(true);
+    }
+  }, [name]);
+
+  const handleLogOut = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVICE_URL}/logout`,
+        {
+          method: "GET",
+          credentials: "include",
+        },
+      );
+      if (response.ok) {
+        dispatch(removeUser());
+      }
+    } catch (e) {
+      errorHandler(e);
+    }
+  };
+
+  if (redirect) {
+    return <Navigate to={"/login"} />;
+  }
+
   return (
     <div
       className={
@@ -25,26 +61,39 @@ function Navbar() {
         </svg>
       </Link>
 
-      <div className={"flex gap-x-10"}>
-        <Link to={"/login"}>
+      {name ? (
+        <div>
           <button
+            onClick={handleLogOut}
             className={
-              "text-white rounded-xl py-1 px-2 active:bg-blue-700 duration-200"
+              "text-white bg-red-500 py-1 px-2 rounded-xl active:bg-red-600 duration-200"
             }
           >
-            Login
+            log out
           </button>
-        </Link>
-        <Link to={"/signup"}>
-          <button
-            className={
-              "text-blue-700 bg-white py-1 px-2 rounded-xl active:bg-stone-200 duration-200"
-            }
-          >
-            Sign-up
-          </button>
-        </Link>
-      </div>
+        </div>
+      ) : (
+        <div className={"flex gap-x-10"}>
+          <Link to={"/login"}>
+            <button
+              className={
+                "text-white rounded-xl py-1 px-2 active:bg-blue-700 duration-200"
+              }
+            >
+              Login
+            </button>
+          </Link>
+          <Link to={"/signup"}>
+            <button
+              className={
+                "text-blue-700 bg-white py-1 px-2 rounded-xl active:bg-stone-200 duration-200"
+              }
+            >
+              Sign-up
+            </button>
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

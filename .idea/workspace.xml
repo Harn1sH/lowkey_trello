@@ -1,4 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{}</component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/controller/logoutController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/routes/logOutRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/navbar/Navbar.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Harn1sH"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Harn1sH/lowkey_trello.git",
+    "accountId": "b9b29556-9578-425c-b411-aa36ed1764bc"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2jQhJqskXDR0JX8aqLjkW9OqvnV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Node.js.index.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/index.js",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Harnish\\Documents\\programs\\Git\\lowkey_trello\\api\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/api">
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-WS-241.18034.50" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="" />
+      <created>1721325139039</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1721325139039</updated>
+      <workItem from="1721325140144" duration="2651000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
+          <line>47</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
+          <line>48</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
+          <line>50</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
+          <line>51</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/api/controller/logoutController.js</url>
+          <line>1</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>

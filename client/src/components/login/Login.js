@@ -12,7 +12,7 @@ function Login() {
   const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
 
-  const handleLogin = async (userResponse) => {
+  const handleGoogleLogin = async (userResponse) => {
     const userData = jwtDecode(userResponse.credential);
     const { given_name: firstName, family_name: lastName, email } = userData;
     try {
@@ -36,6 +36,29 @@ function Login() {
     }
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVICE_URL}/login`,
+        {
+          method: "post",
+          body: JSON.stringify({ email, password }),
+          headers: { "content-type": "application/json" },
+        },
+      );
+      if (response.ok) {
+        const data = await response.json();
+        dispatch(addUser(data));
+        setRedirect(true);
+      } else {
+        throw new Error(response.json());
+      }
+    } catch (e) {
+      errorHandler(e);
+    }
+  };
+
   if (redirect) {
     return <Navigate to={"/"} />;
   }
@@ -43,6 +66,7 @@ function Login() {
   return (
     <div className={"flex justify-center items-center grow "}>
       <form
+        onSubmit={handleLogin}
         className={
           "border-2 w:6/12 md:w-4/12  flex flex-col gap-y-5 border-blue-600 p-7 rounded-lg"
         }
@@ -66,6 +90,7 @@ function Login() {
         />
 
         <button
+          type={"submit"}
           className={
             "border-2 transition-all duration-200 hover:bg-blue-600 hover:text-white border-blue-600 py-1 px-2 rounded-xl text-blue-600"
           }
@@ -73,7 +98,7 @@ function Login() {
           Login
         </button>
         <span className={"flex text-gray-500 justify-center"}>or</span>
-        <GoogleLogin onSuccess={handleLogin} onError={errorHandler} />
+        <GoogleLogin onSuccess={handleGoogleLogin} onError={errorHandler} />
         <div className={"grid grid-cols-3 mx-auto gap-x-2"}>
           <span className={"col-span-3 "}>
             Dont have an account yet?

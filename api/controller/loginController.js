@@ -1,5 +1,6 @@
 const user = require("../models/userModel");
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 
 const jwtSigner = (userDoc, res) => {
   jwt.sign(
@@ -42,12 +43,15 @@ exports.google = async (req, res) => {
 };
 
 exports.index = async (req, res) => {
-  const { firstName, lastName, email } = req.body;
-  if (firstName && email && lastName) {
-    const userDoc = await user.find({ email });
+  const { password, email } = req.body;
+  if (password && email) {
+    const userDoc = await user.findOne({ email });
     if (userDoc) {
       if (!userDoc.isGoogle) {
-        jwtSigner(userDoc, res);
+        const isValid = bcrypt.compareSync(password, userDoc.password);
+        if (isValid) {
+          jwtSigner(userDoc, res);
+        } else res.status(400).json("Incorrect password");
       } else res.status(400).json("Account only linked to google");
     } else res.status(400).json("Account not found");
   } else res.status(400).json("invalid Data");
