@@ -2,15 +2,7 @@ const user = require("../models/userModel");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
-
-const jwtVerifier = (token, res) => {
-  return new Promise((resolve, reject) => {
-    jwt.verify(token, process.env.JWT_SECRET, {}, (err, data) => {
-      if (err) reject(err);
-      else resolve(data);
-    });
-  });
-};
+const utils = require("../utils/utils");
 
 exports.google = async (req, res) => {
   const { firstName, lastName, email } = req.body;
@@ -76,7 +68,8 @@ exports.validate = (req, res) => {
   if (req.cookies) {
     const { token } = req.cookies;
     if (token) {
-      jwtVerifier(token, res)
+      utils
+        .jwtVerifier(token, res)
         .catch((err) => res.status(400).json(err))
         .then((data) => res.json(data));
     } else res.json(null);

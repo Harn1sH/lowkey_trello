@@ -11,8 +11,8 @@ function Layout() {
   const name = useSelector((store) => store.user.name);
   const [redirect, setRedirect] = useState(false);
 
-  const isViewModalOpen = useSelector((store) => store.view.isViewModalOpen);
-  const isAddModalOpen = useSelector((store) => store.view.isAddModalOpen);
+  const isViewModalOpen = useSelector((store) => store.task.isViewModalOpen);
+  const isAddModalOpen = useSelector((store) => store.task.isAddModalOpen);
 
   const fetchData = async () => {
     const response = await fetch(

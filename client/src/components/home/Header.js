@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addTask } from "../../utils/slice/viewDetail/viewDetailSlice";
+import { addTask } from "../../utils/slice/task/taskSlice";
 
 function Header() {
   const dispatch = useDispatch();

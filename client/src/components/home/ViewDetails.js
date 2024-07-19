@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { closeTask } from "../../utils/slice/viewDetail/viewDetailSlice";
+import { closeTask } from "../../utils/slice/task/taskSlice";
 
 function ViewDetails() {
   const dispatch = useDispatch();

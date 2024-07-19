@@ -1,11 +1,20 @@
 import React, { useState } from "react";
-import { closeTask } from "../../utils/slice/viewDetail/viewDetailSlice";
-import { useDispatch } from "react-redux";
+import { closeTask } from "../../utils/slice/task/taskSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addTaskAsync } from "../../utils/slice/task/reducer";
+import { errorHandler } from "../../utils/errorHandler";
 
 function AddTask() {
   const dispatch = useDispatch();
-  const [title, setTitle] = useState("");
+  const [task, setTask] = useState("");
   const [description, setDescription] = useState("");
+
+  const handleSave = () => {
+    if (task && description) {
+      dispatch(addTaskAsync({ task, progress: "todo", description }));
+    } else errorHandler("give valid inputs");
+  };
+
   return (
     <div
       className={
@@ -23,8 +32,8 @@ function AddTask() {
                   type={"text "}
                   placeholder={"title"}
                   className={"border text-md p-2"}
-                  value={title}
-                  onChange={(e) => setTitle(e.target.value)}
+                  value={task}
+                  onChange={(e) => setTask(e.target.value)}
                 />
               </span>
               <span className={"text-md flex flex-col gap-x-3"}>
@@ -50,6 +59,7 @@ function AddTask() {
               cancel
             </button>
             <button
+              onClick={handleSave}
               className={
                 " bg-blue-500 hover:bg-blue-600 duration-200 rounded-md py-1 px-2 text-white"
               }

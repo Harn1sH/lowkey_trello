@@ -3,6 +3,7 @@ const app = express();
 const signUpRouter = require("./routes/signUpRouter");
 const loginRouter = require("./routes/loginRouter");
 const logOutRouter = require("./routes/logOutRouter");
+const taskRouter = require("./routes/taskRouter");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const connectDB = require("./connectDB");
@@ -20,10 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/signup", signUpRouter);
 app.use("/login", loginRouter);
 app.use("/logout", logOutRouter);
-
-app.get("/tests", (req, res) => {
-  res.cookie("tests", "hi").json("ok");
-});
+app.use("/task", taskRouter);
 
 app.listen(process.env.PORT || 4000, () =>
   console.log(`listening on port ${process.env.PORT}`),

@@ -5,15 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/home/AddTask.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/routes/taskRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/utils/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/utils/slice/viewDetail/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/ViewDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/ViewDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/taskController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/AddTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/AddTask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/utils/slice/viewDetail/viewDetailSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/viewDetail/viewDetailSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +98,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721325139039</updated>
       <workItem from="1721325140144" duration="13163000" />
-      <workItem from="1721371641477" duration="12860000" />
+      <workItem from="1721371641477" duration="17116000" />
     </task>
     <servers />
   </component>
@@ -113,31 +112,6 @@
           <url>file://$PROJECT_DIR$/api/controller/logoutController.js</url>
           <line>1</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
-          <line>75</line>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
-          <line>81</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/index.js</url>
-          <line>24</line>
-          <option name="timeStamp" value="18" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
-          <line>78</line>
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/loginController.js</url>
-          <line>80</line>
-          <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

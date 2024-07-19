@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { viewTask } from "../../utils/slice/viewDetail/viewDetailSlice";
+import { viewTask } from "../../utils/slice/task/taskSlice";
 
 function Card() {
   const dispatch = useDispatch();
