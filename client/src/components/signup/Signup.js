@@ -143,7 +143,9 @@ function Signup() {
           Register
         </button>
         <span className={"flex text-gray-500 justify-center"}>or</span>
-        <GoogleLogin onSuccess={handleGoogleLogin} onError={errorHandler} />
+        <div className={"flex justify-center"}>
+          <GoogleLogin onSuccess={handleGoogleLogin} onError={errorHandler} />
+        </div>
         <div className={"flex justify-center space-x-2"}>
           <span>Already a member?</span>
           <Link to="/login">

@@ -6,7 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/taskController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/taskRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/taskRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/user/userSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/user/userSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +117,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721325139039</updated>
       <workItem from="1721325140144" duration="13163000" />
-      <workItem from="1721371641477" duration="33198000" />
+      <workItem from="1721371641477" duration="39301000" />
     </task>
     <servers />
   </component>
@@ -223,36 +233,6 @@
           <line>20</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="70" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/taskController.js</url>
-          <line>41</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/taskController.js</url>
-          <line>42</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/taskController.js</url>
-          <line>43</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/taskController.js</url>
-          <line>44</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/api/controller/taskController.js</url>
-          <line>46</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="78" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

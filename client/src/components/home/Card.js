@@ -3,17 +3,26 @@ import { useDispatch } from "react-redux";
 import { viewTask, editTask } from "../../utils/slice/task/taskSlice";
 import { deleteTaskAsync } from "../../utils/slice/task/reducer";
 import { Navigate } from "react-router-dom";
+import { useDrag } from "react-dnd";
 
 function Card({ task }) {
   const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
-  console.log("card", task._id);
+
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "task",
+    item: { id: task._id },
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
   if (redirect) return <Navigate to={`/`} />;
 
   return (
     <div
-      className="my-2 flex flex-col gap-y-5 bg-blue-200 px-2 py-3  rounded-md"
-      draggable={true}
+      ref={drag}
+      className={`my-2 flex flex-col gap-y-5 bg-blue-200 px-2 py-3  rounded-md ${isDragging ? "opacity-75" : "opacity-100"}`}
     >
       <div className={" flex flex-col"}>
         <span className={"font-bold text-xl"}>{task?.task}</span>

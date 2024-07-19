@@ -2,13 +2,15 @@ import { createSlice } from "@reduxjs/toolkit";
 import { fetchUser } from "./reducer";
 import { errorHandler } from "../../errorHandler";
 
+const initialState = {
+  name: null,
+  email: null,
+  _id: null,
+};
+
 const userSlice = createSlice({
   name: "user",
-  initialState: {
-    name: null,
-    email: null,
-    _id: null,
-  },
+  initialState: initialState,
   reducers: {
     addUser: (state, action) => {
       state.name = action.payload.firstName;
@@ -19,6 +21,9 @@ const userSlice = createSlice({
       state.name = null;
       state.email = null;
       state._id = null;
+    },
+    logOutUser: (state, action) => {
+      return initialState;
     },
   },
   extraReducers: (builder) => {
@@ -35,4 +40,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { addUser, removeUser } = userSlice.actions;
+export const { addUser, removeUser, logOutUser } = userSlice.actions;

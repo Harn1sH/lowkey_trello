@@ -13,17 +13,17 @@ const defaultTask = {
   description: null,
   createdAt: null,
 };
+const initialState = {
+  isViewModalOpen: false,
+  isAddModalOpen: false,
+  isEditModalOpen: false,
+  task: defaultTask,
+  tasks: [],
+};
+
 const taskSlice = createSlice({
   name: "task",
-  initialState: {
-    isViewModalOpen: false,
-    isAddModalOpen: false,
-    isEditModalOpen: false,
-    task: defaultTask,
-    tasks: [],
-    description: null,
-    createdAt: null,
-  },
+  initialState: initialState,
   reducers: {
     viewTask: (state, action) => {
       state.isViewModalOpen = true;
@@ -55,6 +55,9 @@ const taskSlice = createSlice({
     },
     addTask: (state, action) => {
       state.isAddModalOpen = true;
+    },
+    logOutTask: (state, action) => {
+      return initialState;
     },
   },
   extraReducers: (builder) => {
@@ -93,4 +96,5 @@ const taskSlice = createSlice({
 });
 
 export default taskSlice.reducer;
-export const { viewTask, closeTask, addTask, editTask } = taskSlice.actions;
+export const { viewTask, closeTask, addTask, editTask, logOutTask } =
+  taskSlice.actions;

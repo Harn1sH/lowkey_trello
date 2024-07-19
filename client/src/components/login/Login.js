@@ -106,7 +106,9 @@ function Login() {
           Login
         </button>
         <span className={"flex text-gray-500 justify-center"}>or</span>
-        <GoogleLogin onSuccess={handleGoogleLogin} onError={errorHandler} />
+        <div className={"flex justify-center"}>
+          <GoogleLogin onSuccess={handleGoogleLogin} onError={errorHandler} />
+        </div>
         <div className={"grid grid-cols-3 mx-auto gap-x-2"}>
           <span className={"col-span-3 "}>
             Dont have an account yet?

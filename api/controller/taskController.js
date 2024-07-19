@@ -70,3 +70,24 @@ exports.delete = async (req, res) => {
     } else res.status(400).json("invalid credentials");
   } else res.status(400).json("invalid input");
 };
+
+exports.editProgress = async (req, res) => {
+  const { token } = req.cookies;
+  const { progress, _id } = req.body;
+
+  if (progress && _id) {
+    if (token) {
+      try {
+        const data = await utils.jwtVerifier(token);
+        const taskDoc = await Task.findOne({ _id: _id, user: data._id });
+        taskDoc.set({
+          progress: progress,
+        });
+        await taskDoc.save();
+        res.json(taskDoc);
+      } catch (e) {
+        res.status(400).json("invalid credentials");
+      }
+    } else res.status(400).json("invalid credentials");
+  } else res.status(400).json("invalid request");
+};
