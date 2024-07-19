@@ -1,6 +1,10 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { viewTask } from "../../utils/slice/viewDetail/viewDetailSlice";
 
 function Card() {
+  const dispatch = useDispatch();
+  const temp = { task: "null", description: "null", createdAt: "null" };
   return (
     <div className="my-2 flex flex-col gap-y-5 bg-blue-200 px-2 py-3  rounded-md">
       <div className={" flex flex-col"}>
@@ -25,6 +29,7 @@ function Card() {
             Edit
           </button>
           <button
+            onClick={() => dispatch(viewTask(temp))}
             className={
               "bg-blue-600 hover:bg-blue-700 active:bg-blue-800 duration-200 py-1 px-2 rounded-lg"
             }

@@ -4,6 +4,7 @@ import { fetchUser } from "../../utils/slice/user/reducer";
 import { Navigate } from "react-router-dom";
 import Header from "./Header";
 import Body from "./Body";
+import ViewDetails from "./ViewDetails";
 
 function Home() {
   const [redirect, setRedirect] = useState(false);

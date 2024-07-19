@@ -3,26 +3,32 @@ import { createSlice } from "@reduxjs/toolkit";
 const viewDetailSlice = createSlice({
   name: "view",
   initialState: {
-    modalOpen: false,
+    isViewModalOpen: false,
+    isAddModalOpen: false,
     task: null,
     description: null,
     createdAt: null,
   },
   reducers: {
-    addTask: (state, action) => {
-      state.modalOpen = true;
+    viewTask: (state, action) => {
+      state.isViewModalOpen = true;
+      state.isAddModalOpen = false;
       state.task = action.payload.task;
       state.description = action.payload.description;
       state.createdAt = action.payload.createdAt;
     },
-    deleteTask: (state, action) => {
-      state.modalOpen = false;
+    closeTask: (state, action) => {
+      state.isViewModalOpen = false;
+      state.isAddModalOpen = false;
       state.task = null;
       state.description = null;
       state.createdAt = null;
+    },
+    addTask: (state, action) => {
+      state.isAddModalOpen = true;
     },
   },
 });
 
 export default viewDetailSlice.reducer;
-export const { addTask, deleteTask } = viewDetailSlice.actions;
+export const { viewTask, closeTask, addTask } = viewDetailSlice.actions;

@@ -6,7 +6,7 @@ import Home from "./components/home/Home";
 
 function App() {
   return (
-    <div className={"h-screen overflow-hidden"}>
+    <div className={"h-screen "}>
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<Layout />}>

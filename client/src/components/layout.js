@@ -3,11 +3,16 @@ import Navbar from "./navbar/Navbar";
 import { Navigate, Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/slice/user/userSlice";
+import ViewDetails from "./home/ViewDetails";
+import AddTask from "./home/AddTask";
 
 function Layout() {
   const dispatch = useDispatch();
   const name = useSelector((store) => store.user.name);
   const [redirect, setRedirect] = useState(false);
+
+  const isViewModalOpen = useSelector((store) => store.view.isViewModalOpen);
+  const isAddModalOpen = useSelector((store) => store.view.isAddModalOpen);
 
   const fetchData = async () => {
     const response = await fetch(
@@ -26,6 +31,9 @@ function Layout() {
   if (redirect) {
     return <Navigate to={"/login"} />;
   }
+
+  if (isViewModalOpen) return <ViewDetails />;
+  if (isAddModalOpen) return <AddTask />;
 
   return (
     <div className={"min-h-screen flex flex-col"}>
