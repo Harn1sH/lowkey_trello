@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/client/src/components/home/EditTask.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controller/taskController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/taskController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/taskRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/taskRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Body.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Card.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/ViewDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/ViewDetails.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/layout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/task/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/task/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +107,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721325139039</updated>
       <workItem from="1721325140144" duration="13163000" />
-      <workItem from="1721371641477" duration="31684000" />
+      <workItem from="1721371641477" duration="33198000" />
     </task>
     <servers />
   </component>
