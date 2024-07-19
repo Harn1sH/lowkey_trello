@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { errorHandler } from "../../utils/errorHandler";
 import { GoogleLogin } from "@react-oauth/google";
 import { jwtDecode } from "jwt-decode";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../../utils/slice/user/userSlice";
 
 function Login() {
@@ -11,6 +11,12 @@ function Login() {
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
+  const name = useSelector((store) => store.user.name);
+
+  useEffect(() => {
+    if (name) setRedirect(true);
+    else setRedirect(false);
+  }, [name]);
 
   const handleGoogleLogin = async (userResponse) => {
     const userData = jwtDecode(userResponse.credential);
