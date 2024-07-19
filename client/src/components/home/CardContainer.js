@@ -3,7 +3,6 @@ import Card from "./Card";
 import { useDispatch, useSelector } from "react-redux";
 import { useDrop } from "react-dnd";
 import { errorHandler } from "../../utils/errorHandler";
-import { Navigate } from "react-router-dom";
 import { fetchTaskAsync } from "../../utils/slice/task/reducer";
 
 function CardContainer({ containerTitle, setRedirect }) {
@@ -41,7 +40,7 @@ function CardContainer({ containerTitle, setRedirect }) {
   return (
     <div
       ref={drop}
-      className={"col-span-1  border rounded-lg min-h-screen shadow"}
+      className={"col-span-1  border rounded-lg md:min-h-screen shadow"}
     >
       <div className={"p-3 flex flex-col"}>
         <span className={"bg-blue-600 text-white p-1 rounded-md"}>

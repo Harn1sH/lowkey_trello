@@ -10,7 +10,7 @@ function Body() {
   if (redirect) return <Navigate to={"/"} />;
 
   return (
-    <div className={"grid grid-cols-3 gap-x-3"}>
+    <div className={"grid grid-rows-3 md:grid-cols-3 gap-x-3"}>
       {progressLevel.map((containerTitle, index) => (
         <CardContainer
           containerTitle={containerTitle}

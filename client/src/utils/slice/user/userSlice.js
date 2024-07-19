@@ -22,9 +22,6 @@ const userSlice = createSlice({
       state.email = null;
       state._id = null;
     },
-    logOutUser: (state, action) => {
-      return initialState;
-    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchUser.fulfilled, (state, action) => {
@@ -40,4 +37,4 @@ const userSlice = createSlice({
 });
 
 export default userSlice.reducer;
-export const { addUser, removeUser, logOutUser } = userSlice.actions;
+export const { addUser, removeUser } = userSlice.actions;

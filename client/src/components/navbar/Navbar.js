@@ -3,6 +3,7 @@ import { Link, Navigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { errorHandler } from "../../utils/errorHandler";
 import { removeUser } from "../../utils/slice/user/userSlice";
+import { logOutTask } from "../../utils/slice/task/taskSlice";
 
 function Navbar() {
   const name = useSelector((store) => store.user.name);
@@ -20,6 +21,7 @@ function Navbar() {
       );
       if (response.ok) {
         dispatch(removeUser());
+        dispatch(logOutTask());
       }
     } catch (e) {
       errorHandler(e);

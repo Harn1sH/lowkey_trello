@@ -6,21 +6,25 @@ function Header() {
   const dispatch = useDispatch();
 
   return (
-    <div className={"w-full my-4 p-3 shadow-xl rounded-lg"}>
+    <div className={"w-full my-2 p-3 shadow-xl rounded-lg"}>
       <div className={"flex flex-col justify-center gap-y-3"}>
         <div className={"grid grid-cols-11"}>
           <button
             onClick={() => dispatch(addTask())}
             className={
-              "px-4 rounded-lg hover:bg-blue-700 col-span-1 transition-all duration-200 py-1 text-white bg-blue-600"
+              "px-4 rounded-lg hover:bg-blue-700 col-span-4 md:col-span-1 transition-all duration-200 py-1 text-white bg-blue-600"
             }
           >
             Add Task
           </button>
         </div>
-        <div>
-          <div className={"flex justify-between"}>
-            <div className={"flex gap-x-3 px-2 justify-center items-center"}>
+        <div className={""}>
+          <div className={"grid grid-cols-4"}>
+            <div
+              className={
+                "md:flex gap-x-3  px-2 justify-center items-center col-span-1"
+              }
+            >
               <label htmlFor="Search">Search:</label>
               <input
                 type="text"
@@ -29,7 +33,12 @@ function Header() {
                 placeholder="Search"
               />
             </div>
-            <div className={"flex gap-x-3 items-center justify-center"}>
+            <div className={"col-span-2"}></div>
+            <div
+              className={
+                "flex flex-col md:flex-row gap-x-3 items-center justify-center"
+              }
+            >
               <label htmlFor="sort">Sort By:</label>
               <select
                 name="sort"

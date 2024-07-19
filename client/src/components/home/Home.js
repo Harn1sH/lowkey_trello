@@ -18,6 +18,9 @@ function Home() {
     } else dispatch(fetchTaskAsync());
   }, [name]);
 
+  if (redirect) {
+    return <Navigate to={"/login"} />;
+  }
   return (
     <div className={"mx-5"}>
       <Header />
