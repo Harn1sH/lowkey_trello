@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/Card.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Body.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Body.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Home.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +43,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="2jQhJqskXDR0JX8aqLjkW9OqvnV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -88,7 +95,7 @@
       <option name="presentableId" value="Default" />
       <updated>1721325139039</updated>
       <workItem from="1721325140144" duration="13163000" />
-      <workItem from="1721371641477" duration="1215000" />
+      <workItem from="1721371641477" duration="5248000" />
     </task>
     <servers />
   </component>

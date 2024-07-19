@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUser } from "../../utils/slice/user/reducer";
 import { Navigate } from "react-router-dom";
+import Header from "./Header";
+import Body from "./Body";
 
 function Home() {
   const [redirect, setRedirect] = useState(false);
@@ -19,7 +21,12 @@ function Home() {
     return <Navigate to={"/login"} />;
   }
 
-  return <div>Home</div>;
+  return (
+    <div className={"mx-5"}>
+      <Header />
+      <Body />
+    </div>
+  );
 }
 
 export default Home;
