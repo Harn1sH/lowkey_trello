@@ -4,7 +4,7 @@ import { fetchUser } from "../../utils/slice/user/reducer";
 import { Navigate } from "react-router-dom";
 import Header from "./Header";
 import Body from "./Body";
-import ViewDetails from "./ViewDetails";
+import { fetchTaskAsync } from "../../utils/slice/task/reducer";
 
 function Home() {
   const [redirect, setRedirect] = useState(false);
@@ -15,7 +15,7 @@ function Home() {
     dispatch(fetchUser());
     if (!name) {
       setRedirect(true);
-    }
+    } else dispatch(fetchTaskAsync());
   }, [name]);
 
   if (redirect) {

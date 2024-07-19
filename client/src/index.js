@@ -8,11 +8,9 @@ import store from "./utils/store/store";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
-        <App />
-      </GoogleOAuthProvider>
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
+      <App />
+    </GoogleOAuthProvider>
+  </Provider>,
 );

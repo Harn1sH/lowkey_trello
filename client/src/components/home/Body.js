@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import CardContainer from "./CardContainer";
-import { useDispatch, useSelector } from "react-redux";
-import ViewDetails from "./ViewDetails";
 
 function Body() {
   const progressLevel = ["TODO", "IN PROGRESS", "DONE"];

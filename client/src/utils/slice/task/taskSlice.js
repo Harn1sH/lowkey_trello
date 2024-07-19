@@ -1,13 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { addTaskAsync } from "./reducer";
+import {
+  addTaskAsync,
+  deleteTaskAsync,
+  editTaskAsync,
+  fetchTaskAsync,
+} from "./reducer";
 import { errorHandler } from "../../errorHandler";
 
+const defaultTask = {
+  _id: null,
+  task: null,
+  description: null,
+  createdAt: null,
+};
 const taskSlice = createSlice({
   name: "task",
   initialState: {
     isViewModalOpen: false,
     isAddModalOpen: false,
-    task: null,
+    isEditModalOpen: false,
+    task: defaultTask,
     tasks: [],
     description: null,
     createdAt: null,
@@ -16,16 +28,30 @@ const taskSlice = createSlice({
     viewTask: (state, action) => {
       state.isViewModalOpen = true;
       state.isAddModalOpen = false;
-      state.task = action.payload.task;
-      state.description = action.payload.description;
-      state.createdAt = action.payload.createdAt;
+      state.isEditModalOpen = false;
+      state.task = {
+        task: action.payload.task,
+        description: action.payload.description,
+        createdAt: action.payload.createdAt,
+      };
+    },
+    editTask: (state, action) => {
+      state.isViewModalOpen = false;
+      state.isAddModalOpen = false;
+      state.isEditModalOpen = true;
+      console.log(action.payload);
+      state.task = {
+        _id: action.payload._id,
+        task: action.payload.task,
+        description: action.payload.description,
+        createdAt: action.payload.createdAt,
+      };
     },
     closeTask: (state, action) => {
       state.isViewModalOpen = false;
       state.isAddModalOpen = false;
-      state.task = null;
-      state.description = null;
-      state.createdAt = null;
+      state.isEditModalOpen = false;
+      state.task = defaultTask;
     },
     addTask: (state, action) => {
       state.isAddModalOpen = true;
@@ -33,7 +59,7 @@ const taskSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(addTaskAsync.rejected, (state, action) => {
-      errorHandler(action.payload);
+      errorHandler(`4 ${action.payload}`);
     });
     builder.addCase(addTaskAsync.fulfilled, (state, action) => {
       state.tasks = [
@@ -43,12 +69,28 @@ const taskSlice = createSlice({
           description: action.payload.description,
           progress: action.payload.progress,
           createdAt: action.payload.createdAt,
+          _id: action.payload._id,
         },
       ];
       state.isAddModalOpen = false;
+    });
+    builder.addCase(fetchTaskAsync.rejected, (state, action) => {
+      errorHandler(action.payload);
+    });
+    builder.addCase(fetchTaskAsync.fulfilled, (state, action) => {
+      state.tasks = action.payload;
+    });
+    builder.addCase(editTaskAsync.fulfilled, (state, action) => {
+      state.isEditModalOpen = false;
+    });
+    builder.addCase(deleteTaskAsync.fulfilled, (state, action) => {
+      return state;
+    });
+    builder.addCase(deleteTaskAsync.rejected, (state, action) => {
+      errorHandler(action.payload);
     });
   },
 });
 
 export default taskSlice.reducer;
-export const { viewTask, closeTask, addTask } = taskSlice.actions;
+export const { viewTask, closeTask, addTask, editTask } = taskSlice.actions;

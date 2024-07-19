@@ -1,9 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { closeTask } from "../../utils/slice/task/taskSlice";
 
 function ViewDetails() {
   const dispatch = useDispatch();
+  const task = useSelector((store) => store.task.task);
+
   return (
     <div
       className={
@@ -17,15 +19,15 @@ function ViewDetails() {
             <div className={"flex flex-col gap-y-2"}>
               <span className={"text-lg font-semibold flex gap-x-3"}>
                 <span>Title:</span>
-                <span>{}</span>
+                <span>{task?.task}</span>
               </span>
               <span className={"text-md flex gap-x-3"}>
                 <span>Description:</span>
-                <span>{}</span>
+                <span>{task?.description}</span>
               </span>
               <span className={"text-gray-500 flex gap-x-3"}>
                 <span>Created at:</span>
-                <span>{}</span>
+                <span>{task?.createdAt}</span>
               </span>
             </div>
           </div>
