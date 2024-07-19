@@ -12,7 +12,7 @@ function Header() {
           <button
             onClick={() => dispatch(addTask())}
             className={
-              "px-4 rounded-lg hover:bg-blue-700 col-span-4 md:col-span-1 transition-all duration-200 py-1 text-white bg-blue-600"
+              "px-4 rounded-lg hover:bg-blue-700 col-span-4 md:col-span-2 transition-all duration-200 py-1 text-white bg-blue-600"
             }
           >
             Add Task
@@ -22,10 +22,12 @@ function Header() {
           <div className={"grid grid-cols-4"}>
             <div
               className={
-                "md:flex gap-x-3  px-2 justify-center items-center col-span-1"
+                "md:flex gap-x-3 ml-1 md:ml-6  px-2 justify-center items-center col-span-1"
               }
             >
-              <label htmlFor="Search">Search:</label>
+              <label htmlFor="Search" className={"pl-2"}>
+                Search:
+              </label>
               <input
                 type="text"
                 id="Search"
