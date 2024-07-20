@@ -1,14 +1,20 @@
 const signUp = require("../controller/signUpController");
-const utils = require("../utils/testUtils");
 const user = require("../models/userModel");
 const bcrypt = require("bcrypt");
+
+const ress = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
+  cookie: jest.fn().mockReturnThis(),
+  clearCookie: jest.fn().mockReturnThis(),
+};
 
 describe("test suite for signUp controller", () => {
   describe("signUp manualy", () => {
     let res;
 
     beforeEach(() => {
-      res = utils.res;
+      res = ress;
     });
 
     afterEach(() => {
@@ -19,7 +25,7 @@ describe("test suite for signUp controller", () => {
       const req = {
         body: { firstName: "Test", lastName: "Test", email: "Password" },
       };
-      const res = utils.res;
+      const res = ress;
 
       signUp.index(req, res);
       expect(res.status).toHaveBeenCalledWith(400);
@@ -121,7 +127,7 @@ describe("test suite for signUp controller", () => {
     let res;
 
     beforeEach(() => {
-      res = utils.res;
+      res = ress;
     });
 
     afterEach(() => {

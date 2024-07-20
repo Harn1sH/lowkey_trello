@@ -1,14 +1,20 @@
 const taskController = require("../controller/taskController");
-const testUtils = require("../utils/testUtils");
 const utils = require("../utils/utils");
 const Task = require("../models/taskModel");
+
+const ress = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
+  cookie: jest.fn().mockReturnThis(),
+  clearCookie: jest.fn().mockReturnThis(),
+};
 
 describe("Test Suite for task controller", () => {
   describe("Test suite for add task", () => {
     let res;
 
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
 
     afterEach(() => {
@@ -85,7 +91,7 @@ describe("Test Suite for task controller", () => {
   describe("Test suite for get task", () => {
     let res;
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
     afterEach(() => {
       jest.restoreAllMocks();
@@ -139,7 +145,7 @@ describe("Test Suite for task controller", () => {
   describe("Test suite for edit task", () => {
     let res;
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
 
     afterEach(() => {
@@ -207,7 +213,7 @@ describe("Test Suite for task controller", () => {
     let res;
 
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
     afterEach(() => {
       jest.restoreAllMocks();
@@ -272,7 +278,7 @@ describe("Test Suite for task controller", () => {
     let res;
 
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
     afterEach(() => {
       jest.restoreAllMocks();

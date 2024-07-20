@@ -1,15 +1,21 @@
-const testUtils = require("../utils/testUtils");
 const utils = require("../utils/utils");
 const login = require("../controller/loginController");
 const user = require("../models/userModel");
 const bcrypt = require("bcrypt");
+
+const ress = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
+  cookie: jest.fn().mockReturnThis(),
+  clearCookie: jest.fn().mockReturnThis(),
+};
 
 describe("Test Suite for login controller", () => {
   describe("login manualy", () => {
     let res;
 
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
     afterEach(() => {
       jest.restoreAllMocks();
@@ -58,7 +64,7 @@ describe("Test Suite for login controller", () => {
     let res;
 
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
     afterEach(() => {
       jest.restoreAllMocks();
@@ -92,7 +98,7 @@ describe("Test Suite for login controller", () => {
   describe("validate", () => {
     let res;
     beforeEach(() => {
-      res = testUtils.res;
+      res = ress;
     });
     afterEach(() => {
       jest.restoreAllMocks();

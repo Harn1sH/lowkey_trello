@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/__specs__/loginController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/loginController.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/__specs__/signUpController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/signUpController.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/__specs__/taskController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/taskController.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/logoutController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/logoutController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,33 +54,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Node.js.index.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/index.js&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.start.executor&quot;: &quot;Debug&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Harnish\\Documents\\programs\\Git\\lowkey_trello\\client\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Jest.Test Suite for login controller.executor": "Run",
+    "Node.js.index.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/index.js",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "npm.start.executor": "Debug",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Harnish\\Documents\\programs\\Git\\lowkey_trello\\client\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Harnish\Documents\programs\Git\lowkey_trello\client\src\utils\slice\user" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.index.js">
+  <component name="RunManager" selected="Jest.Test Suite for login controller">
+    <configuration name="Test Suite for login controller" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/api/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/api" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/api/__specs__/loginController.spec.js" />
+      <test-names>
+        <test-name value="Test Suite for login controller" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="index.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="index.js" working-dir="$PROJECT_DIR$/api">
       <method v="2" />
     </configuration>
@@ -92,6 +110,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.Test Suite for login controller" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -114,7 +133,7 @@
       <workItem from="1721325140144" duration="13163000" />
       <workItem from="1721371641477" duration="46649000" />
       <workItem from="1721457419961" duration="2416000" />
-      <workItem from="1721487965720" duration="2766000" />
+      <workItem from="1721487965720" duration="4031000" />
     </task>
     <servers />
   </component>

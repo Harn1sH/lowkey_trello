@@ -1,10 +1,16 @@
-const utils = require("../utils/testUtils");
 const logout = require("../controller/logoutController");
+
+const ress = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
+  cookie: jest.fn().mockReturnThis(),
+  clearCookie: jest.fn().mockReturnThis(),
+};
 
 describe("test suite for logout controller", () => {
   let res;
   beforeEach(() => {
-    res = utils.res;
+    res = ress;
   });
 
   afterEach(() => {
