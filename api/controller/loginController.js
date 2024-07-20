@@ -16,9 +16,9 @@ exports.google = async (req, res) => {
         (err, token) => {
           if (err) throw err;
           res
-            .cookie("token", token)
+            .cookie("token", token, { sameSite: "none", secure: true })
             .json({ firstName: firstName, _id: userDoc._id, email: email });
-        }
+        },
       );
     } else {
       res.status(400).json("Account not found");
@@ -43,15 +43,17 @@ exports.index = async (req, res) => {
               _id: userDoc._id,
             },
             process.env.JWT_SECRET,
-            res
+            res,
           )
           .catch((e) => res.status(400).json(e))
           .then((token) =>
-            res.cookie("token", token).json({
-              firstName: userDoc.firstName,
-              email: userDoc.email,
-              _id: userDoc._id,
-            })
+            res
+              .cookie("token", token, { sameSite: "none", secure: true })
+              .json({
+                firstName: userDoc.firstName,
+                email: userDoc.email,
+                _id: userDoc._id,
+              }),
           );
       } else res.status(401).json("Incorrect password");
     } else res.status(400).json("Account not found");

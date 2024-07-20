@@ -13,7 +13,9 @@ require("dotenv").config();
 connectDB();
 
 //middlewares
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({ credentials: true, origin: "https://lowkey-trello.onrender.com" }),
+);
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
