@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/__specs__/loginController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/loginController.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/__specs__/signUpController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/signUpController.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/__specs__/taskController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/taskController.spec.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/controller/logoutController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/logoutController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +56,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Jest.Test Suite for login controller.executor": "Run",
+    "Jest.test suite for logout controller.Should clear cookie when cookie is sent.executor": "Run",
     "Node.js.index.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -82,7 +80,7 @@
       <recent name="C:\Users\Harnish\Documents\programs\Git\lowkey_trello\client\src\utils\slice\user" />
     </key>
   </component>
-  <component name="RunManager" selected="Jest.Test Suite for login controller">
+  <component name="RunManager" selected="Jest.test suite for logout controller.Should clear cookie when cookie is sent">
     <configuration name="Test Suite for login controller" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
       <jest-package value="$PROJECT_DIR$/api/node_modules/jest" />
@@ -92,6 +90,19 @@
       <test-file value="$PROJECT_DIR$/api/__specs__/loginController.spec.js" />
       <test-names>
         <test-name value="Test Suite for login controller" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="test suite for logout controller.Should clear cookie when cookie is sent" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/api/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$/api" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" />
+      <test-names>
+        <test-name value="test suite for logout controller" />
+        <test-name value="Should clear cookie when cookie is sent" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -110,6 +121,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.test suite for logout controller.Should clear cookie when cookie is sent" />
         <item itemvalue="Jest.Test Suite for login controller" />
         <item itemvalue="npm.start" />
       </list>
@@ -133,7 +145,7 @@
       <workItem from="1721325140144" duration="13163000" />
       <workItem from="1721371641477" duration="46649000" />
       <workItem from="1721457419961" duration="2416000" />
-      <workItem from="1721487965720" duration="4031000" />
+      <workItem from="1721487965720" duration="8933000" />
     </task>
     <servers />
   </component>

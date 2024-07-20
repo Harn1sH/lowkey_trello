@@ -28,7 +28,7 @@ describe("test suite for logout controller", () => {
     expect(res.json).toHaveBeenCalledWith("invalid credentials");
   });
 
-  it("Should sclear cookie when cookie is sent", () => {
+  it("Should clear cookie when cookie is sent", () => {
     res = {
       status: jest.fn().mockReturnThis(),
       json: jest.fn(),
@@ -38,7 +38,10 @@ describe("test suite for logout controller", () => {
       cookies: { token: "abcd" },
     };
     logout.index(req, res);
-    expect(res.clearCookie).toHaveBeenCalledWith("token");
+    expect(res.clearCookie).toHaveBeenCalledWith("token", {
+      sameSite: "none",
+      secure: true,
+    });
     expect(res.json).toHaveBeenCalledWith("ok");
   });
 });

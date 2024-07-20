@@ -12,7 +12,7 @@ function ViewDetails() {
         "w-screen h-screen flex justify-center items-center bg-gray-500 "
       }
     >
-      <div className={"bg-white p-4 rounded-md w-4/12 h-5/6"}>
+      <div className={"bg-white p-4 rounded-md w-9/12 md:w-4/12 h-5/6"}>
         <div className={"flex flex-col justify-between h-full"}>
           <div className={"flex flex-col"}>
             <span className={"text-xl font-bold my-3"}>Task Details</span>
