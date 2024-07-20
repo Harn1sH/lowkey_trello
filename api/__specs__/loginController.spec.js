@@ -101,6 +101,20 @@ describe("Test Suite for login controller", () => {
       expect(res.status).toHaveBeenCalledWith(400);
       expect(res.json).toHaveBeenCalledWith("invalid Data");
     });
+
+    it("Should send cookie when correct credentials is passed", async () => {
+      const req = {
+        body: { email: "test", firstName: "test", lastName: "test" },
+      };
+
+      jest.spyOn(user, "findOne").mockResolvedValue({
+        password: bcrypt.hashSync("test", bcrypt.genSaltSync()),
+      });
+      jest.spyOn(utils, "jwtSigner").mockResolvedValue({ task: "ok" });
+      jest.spyOn(bcrypt, "compareSync").mockReturnValue(true);
+
+      await login.google(req, res);
+    });
   });
 
   describe("validate", () => {
