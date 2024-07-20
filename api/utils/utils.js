@@ -9,7 +9,11 @@ exports.jwtVerifier = (token) => {
   });
 };
 
-exports.res = {
-  status: jest.fn().mockReturnThis(),
-  json: jest.fn(),
+exports.jwtSigner = (payload, secret, res) => {
+  return new Promise((resolve, reject) => {
+    jwt.sign(payload, secret, {}, (err, token) => {
+      if (err) reject(err);
+      else resolve(token);
+    });
+  });
 };

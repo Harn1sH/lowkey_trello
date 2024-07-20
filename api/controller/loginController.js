@@ -18,7 +18,7 @@ exports.google = async (req, res) => {
           res
             .cookie("token", token)
             .json({ firstName: firstName, _id: userDoc._id, email: email });
-        },
+        }
       );
     } else {
       res.status(400).json("Account not found");
@@ -35,24 +35,25 @@ exports.index = async (req, res) => {
     if (userDoc) {
       const isValid = bcrypt.compareSync(password, userDoc.password);
       if (isValid) {
-        jwt.sign(
-          {
-            firstName: userDoc.firstName,
-            email: userDoc.email,
-            _id: userDoc._id,
-          },
-          process.env.JWT_SECRET,
-          {},
-          (err, token) => {
-            if (err) throw err;
+        utils
+          .jwtSigner(
+            {
+              firstName: userDoc.firstName,
+              email: userDoc.email,
+              _id: userDoc._id,
+            },
+            process.env.JWT_SECRET,
+            res
+          )
+          .catch((e) => res.status(400).json(e))
+          .then((token) =>
             res.cookie("token", token).json({
               firstName: userDoc.firstName,
               email: userDoc.email,
               _id: userDoc._id,
-            });
-          },
-        );
-      } else res.status(400).json("Incorrect password");
+            })
+          );
+      } else res.status(401).json("Incorrect password");
     } else res.status(400).json("Account not found");
   } else res.status(400).json("invalid Data");
 };
