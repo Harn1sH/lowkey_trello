@@ -20,9 +20,9 @@ exports.add = async (req, res) => {
         });
         res.json(taskDoc);
       } catch (e) {
-        res.status(400).json("invalid token");
+        res.status(401).json("invalid token");
       }
-    } else res.status(400).json("invalid token");
+    } else res.status(401).json("invalid token");
   } else res.status(400).json("invalid inputs");
 };
 
@@ -34,25 +34,27 @@ exports.get = async (req, res) => {
       const taskDoc = await Task.find({ user: data._id });
       res.json(taskDoc);
     } catch (e) {
-      res.status(400).json("invalid credentials");
+      res.status(401).json("invalid credentials");
     }
-  } else res.status(400).json("invalid credentials");
+  } else res.status(401).json("invalid credentials");
 };
 
 exports.edit = async (req, res) => {
   const { token } = req.cookies;
   const { _id, task, description } = req.body;
-  if (token) {
-    try {
-      const response = await utils.jwtVerifier(token);
-      const taskDoc = await Task.findById(_id);
-      taskDoc.set({ task, description });
-      await taskDoc.save();
-      res.json(taskDoc);
-    } catch (e) {
-      res.status(400).json("invalid credential");
-    }
-  } else res.status(400).json("invalid request");
+  if (_id && task && description) {
+    if (token) {
+      try {
+        const response = await utils.jwtVerifier(token);
+        const taskDoc = await Task.findById(_id);
+        taskDoc.set({ task, description });
+        await taskDoc.save();
+        res.json(taskDoc);
+      } catch (e) {
+        res.status(401).json("invalid credential");
+      }
+    } else res.status(401).json("invalid request");
+  } else res.status(401).json("invalid inputs");
 };
 
 exports.delete = async (req, res) => {
@@ -65,9 +67,9 @@ exports.delete = async (req, res) => {
         const taskDoc = await Task.findByIdAndDelete(_id);
         res.json("deleted");
       } catch (e) {
-        res.status(400).json("invalid credentials");
+        res.status(401).json("invalid credentials");
       }
-    } else res.status(400).json("invalid credentials");
+    } else res.status(401).json("invalid credentials");
   } else res.status(400).json("invalid input");
 };
 
@@ -86,8 +88,8 @@ exports.editProgress = async (req, res) => {
         await taskDoc.save();
         res.json(taskDoc);
       } catch (e) {
-        res.status(400).json("invalid credentials");
+        res.status(401).json("invalid credentials");
       }
-    } else res.status(400).json("invalid credentials");
+    } else res.status(401).json("invalid credentials");
   } else res.status(400).json("invalid request");
 };

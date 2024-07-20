@@ -1,9 +1,9 @@
 const signUp = require("../controller/signUpController");
-const utils = require("../utils/utils");
+const utils = require("../utils/testUtils");
 const user = require("../models/userModel");
 const bcrypt = require("bcrypt");
 
-describe.skip("test suite for signUp controller", () => {
+describe("test suite for signUp controller", () => {
   describe("signUp manualy", () => {
     let res;
 

@@ -1,16 +1,15 @@
-const test_utils = require("../utils/testUtils");
+const testUtils = require("../utils/testUtils");
 const utils = require("../utils/utils");
 const login = require("../controller/loginController");
 const user = require("../models/userModel");
 const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
 
-describe.skip("Test Suite for login controller", () => {
+describe("Test Suite for login controller", () => {
   describe("login manualy", () => {
     let res;
 
     beforeEach(() => {
-      res = test_utils.res;
+      res = testUtils.res;
     });
     afterEach(() => {
       jest.restoreAllMocks();
@@ -53,13 +52,27 @@ describe.skip("Test Suite for login controller", () => {
       expect(res.status).toHaveBeenCalledWith(401);
       expect(res.json).toHaveBeenCalledWith("Incorrect password");
     });
+
+    it("Should send cookie when correct credentials is passed", async () => {
+      const req = {
+        body: { email: "test", password: "test" },
+      };
+
+      jest.spyOn(user, "findOne").mockResolvedValue({
+        password: bcrypt.hashSync("test", bcrypt.genSaltSync()),
+      });
+      jest.spyOn(utils, "jwtSigner").mockResolvedValue({ task: "ok" });
+      jest.spyOn(bcrypt, "compareSync").mockReturnValue(true);
+
+      await login.index(req, res);
+    });
   });
 
   describe("login using google", () => {
     let res;
 
     beforeEach(() => {
-      res = test_utils.res;
+      res = testUtils.res;
     });
     afterEach(() => {
       jest.restoreAllMocks();
@@ -93,7 +106,7 @@ describe.skip("Test Suite for login controller", () => {
   describe("validate", () => {
     let res;
     beforeEach(() => {
-      res = test_utils.res;
+      res = testUtils.res;
     });
     afterEach(() => {
       jest.restoreAllMocks();
