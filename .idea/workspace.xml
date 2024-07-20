@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/__specs__/logoutController.spec.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/home/EditTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/EditTask.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,7 +147,7 @@
       <workItem from="1721325140144" duration="13163000" />
       <workItem from="1721371641477" duration="46649000" />
       <workItem from="1721457419961" duration="2416000" />
-      <workItem from="1721487965720" duration="8933000" />
+      <workItem from="1721487965720" duration="13593000" />
     </task>
     <servers />
   </component>

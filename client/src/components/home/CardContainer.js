@@ -5,7 +5,7 @@ import { useDrop } from "react-dnd";
 import { errorHandler } from "../../utils/errorHandler";
 import { fetchTaskAsync } from "../../utils/slice/task/reducer";
 
-function CardContainer({ containerTitle, setRedirect }) {
+function CardContainer({ containerTitle }) {
   const tasks = useSelector((store) => store.task.tasks);
 
   const dispatch = useDispatch();
@@ -49,7 +49,13 @@ function CardContainer({ containerTitle, setRedirect }) {
 
         {tasks.map((task) => {
           if (task?.progress === containerTitle.toLowerCase()) {
-            return <Card task={task} key={task?._id} />;
+            return (
+              <Card
+                task={task}
+                key={task?._id}
+                containerTitle={containerTitle}
+              />
+            );
           }
         })}
       </div>

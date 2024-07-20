@@ -39,12 +39,12 @@ const taskSlice = createSlice({
       state.isViewModalOpen = false;
       state.isAddModalOpen = false;
       state.isEditModalOpen = true;
-      console.log(action.payload);
       state.task = {
         _id: action.payload._id,
         task: action.payload.task,
         description: action.payload.description,
         createdAt: action.payload.createdAt,
+        progress: action.payload.progress,
       };
     },
     closeTask: (state, action) => {

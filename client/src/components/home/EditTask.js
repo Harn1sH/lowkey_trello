@@ -2,12 +2,36 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { closeTask } from "../../utils/slice/task/taskSlice";
 import { editTaskAsync } from "../../utils/slice/task/reducer";
+import { errorHandler } from "../../utils/errorHandler";
+import { Navigate } from "react-router-dom";
 
 function EditTask() {
   const dispatch = useDispatch();
   const Task = useSelector((store) => store.task.task);
   const [task, setTask] = useState(Task?.task);
   const [description, setDescription] = useState(Task?.description);
+
+  const classChooser = (value) =>
+    value === Task?.progress.toLowerCase() ? "bg-blue-600 text-white" : "";
+
+  const handleChange = async (progress) => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVICE_URL}/task/edit/progress`,
+        {
+          method: "PUT",
+          body: JSON.stringify({ _id: Task._id, progress: progress }),
+          credentials: "include",
+          headers: { "content-type": "application/json" },
+        },
+      );
+      if (response.ok) {
+        dispatch(closeTask());
+      } else throw new Error(await response.json());
+    } catch (e) {
+      errorHandler(e);
+    }
+  };
 
   return (
     <div
@@ -43,6 +67,28 @@ function EditTask() {
                 <span>Created at:</span>
                 <span>{Task?.createdAt}</span>
               </span>
+            </div>
+          </div>
+          <div className={"md:hidden"}>
+            <div className={"flex "}>
+              <button
+                onClick={() => handleChange("todo")}
+                className={`border hover:bg-blue-200 duration-200 rounded-tl-lg rounded-bl-lg border-black p-2 active:bg-blue-600 ${classChooser("todo")}`}
+              >
+                todo
+              </button>
+              <button
+                onClick={() => handleChange("in progress")}
+                className={`border hover:bg-blue-200 duration-200  border-black p-2 ${classChooser("in progress")} active:bg-blue-600`}
+              >
+                in progress
+              </button>
+              <button
+                onClick={() => handleChange("done")}
+                className={`border hover:bg-blue-200 duration-200 rounded-tr-lg rounded-br-lg border-black p-2 ${classChooser("done")} active:bg-blue-600`}
+              >
+                done
+              </button>
             </div>
           </div>
           <div className={"flex justify-end gap-x-3"}>

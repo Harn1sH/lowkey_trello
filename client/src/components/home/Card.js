@@ -5,7 +5,7 @@ import { deleteTaskAsync } from "../../utils/slice/task/reducer";
 import { Navigate } from "react-router-dom";
 import { useDrag } from "react-dnd";
 
-function Card({ task }) {
+function Card({ task, containerTitle }) {
   const [redirect, setRedirect] = useState(false);
   const dispatch = useDispatch();
 
@@ -50,6 +50,7 @@ function Card({ task }) {
                   task: task.task,
                   description: task.description,
                   createdAt: task.createdAt,
+                  progress: containerTitle,
                 }),
               );
               setRedirect(true);
