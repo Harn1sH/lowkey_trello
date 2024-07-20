@@ -5,8 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/api/__specs__/signUpController.spec.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/signUpController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/signUpController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/jest.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +38,10 @@
     &quot;accountId&quot;: &quot;b9b29556-9578-425c-b411-aa36ed1764bc&quot;
   }
 }</component>
+  <component name="JsBowerSettings">
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -48,6 +55,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Node.js.index.js.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -61,7 +69,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.start.executor": "Debug",
     "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Harnish\\Documents\\programs\\Git\\lowkey_trello\\api\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -107,11 +115,15 @@
       <option name="presentableId" value="Default" />
       <updated>1721325139039</updated>
       <workItem from="1721325140144" duration="13163000" />
-      <workItem from="1721371641477" duration="41946000" />
+      <workItem from="1721371641477" duration="46649000" />
+      <workItem from="1721457419961" duration="2416000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

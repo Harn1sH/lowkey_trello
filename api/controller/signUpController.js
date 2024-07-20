@@ -15,7 +15,15 @@ exports.index = async (req, res) => {
         isGoogle: false,
       });
       res.json(userDoc);
+    } else if (validatorDoc && validatorDoc.isGoogle) {
+      validatorDoc.set({
+        password: bcrypt.hashSync(password, salt),
+        isGoogle: true,
+      });
+      await validatorDoc.save();
+      res.json(validatorDoc);
     } else {
+      console.log("hits");
       res.status(400).json("Email already exists");
     }
   } else res.status(400).json("invalid data");
@@ -34,10 +42,16 @@ exports.google = async (req, res) => {
         password: null,
       });
       res.json(userDoc);
+    } else if (validUserDoc && !validUserDoc.isGoogle) {
+      validUserDoc.set({
+        isGoogle: true,
+      });
+      await validUserDoc.save();
+      res.json(validUserDoc);
     } else {
       res.status(400).json("User already exists");
     }
   } else {
-    res.status(400).json("Invalid Data");
+    res.status(400).json("invalid data");
   }
 };

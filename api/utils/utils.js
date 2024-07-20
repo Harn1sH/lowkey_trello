@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+
 exports.jwtVerifier = (token) => {
   return new Promise((resolve, reject) => {
     jwt.verify(token, process.env.JWT_SECRET, {}, (err, data) => {
@@ -6,4 +7,9 @@ exports.jwtVerifier = (token) => {
       else resolve(data);
     });
   });
+};
+
+exports.res = {
+  status: jest.fn().mockReturnThis(),
+  json: jest.fn(),
 };
