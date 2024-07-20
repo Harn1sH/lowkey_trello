@@ -13,10 +13,21 @@ function Login() {
   const dispatch = useDispatch();
   const name = useSelector((store) => store.user.name);
 
+  const validate = async () => {
+    const response = await fetch(
+      `${process.env.REACT_APP_SERVICE_URL}/login/validate`,
+      {
+        method: "GET",
+        credentials: "include",
+      },
+    );
+    const data = await response.json();
+    if (data) setRedirect(true);
+  };
+
   useEffect(() => {
-    if (name) setRedirect(true);
-    else setRedirect(false);
-  }, [name]);
+    validate();
+  }, []);
 
   const handleGoogleLogin = async (userResponse) => {
     const userData = jwtDecode(userResponse.credential);
