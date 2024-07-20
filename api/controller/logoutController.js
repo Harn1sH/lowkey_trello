@@ -3,6 +3,6 @@ exports.index = (req, res) => {
   if (token) {
     res.clearCookie("token").json("ok");
   } else {
-    res.status(400).json("invalid credentials");
+    res.status(401).json("invalid credentials");
   }
 };

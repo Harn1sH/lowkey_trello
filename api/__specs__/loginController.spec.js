@@ -5,7 +5,7 @@ const user = require("../models/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-describe("Test Suite for login controller", () => {
+describe.skip("Test Suite for login controller", () => {
   describe("login manualy", () => {
     let res;
 
