@@ -42,11 +42,13 @@ function Login() {
           credentials: "include",
         },
       );
-      const data = await response.json();
       if (response.ok) {
+        const data = await response.json();
         dispatch(addUser(data));
         setRedirect(true);
       } else {
+        const data = await response.json();
+        console.log(data);
         throw new Error(data);
       }
     } catch (e) {
@@ -71,7 +73,7 @@ function Login() {
         dispatch(addUser(data));
         setRedirect(true);
       } else {
-        throw new Error(response.json());
+        throw new Error(await response.json());
       }
     } catch (e) {
       errorHandler(e);

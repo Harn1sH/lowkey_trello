@@ -16,12 +16,15 @@ exports.index = async (req, res) => {
       });
       res.json(userDoc);
     } else if (validatorDoc && validatorDoc.isGoogle) {
-      validatorDoc.set({
-        password: bcrypt.hashSync(password, salt),
-        isGoogle: true,
-      });
-      await validatorDoc.save();
-      res.json(validatorDoc);
+      // validatorDoc.set({
+      //   password: bcrypt.hashSync(password, salt),
+      //   isGoogle: true,
+      // });
+      // await validatorDoc.save();
+      // res.json(validatorDoc);
+      res
+        .status(400)
+        .json("account is linked with google, sign in with google");
     } else {
       console.log("hits");
       res.status(400).json("Email already exists");
@@ -43,11 +46,14 @@ exports.google = async (req, res) => {
       });
       res.json(userDoc);
     } else if (validUserDoc && !validUserDoc.isGoogle) {
-      validUserDoc.set({
-        isGoogle: true,
-      });
-      await validUserDoc.save();
-      res.json(validUserDoc);
+      // validUserDoc.set({
+      //   isGoogle: true,
+      // });
+      // await validUserDoc.save();
+      // res.json(validUserDoc);
+      res
+        .status(400)
+        .json("account already exists, sign in via email and password");
     } else {
       res.status(400).json("User already exists");
     }

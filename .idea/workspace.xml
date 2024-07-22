@@ -6,10 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="1159b3c3-1674-4b78-9078-2b06f16e77ff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/CardContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/home/EditTask.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/home/EditTask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/utils/slice/task/taskSlice.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/loginController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/loginController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/controller/signUpController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/signUpController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/login/Login.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,30 +53,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Jest.Test Suite for login controller.executor": "Run",
-    "Jest.test suite for logout controller.Should clear cookie when cookie is sent.executor": "Run",
-    "Node.js.index.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/index.js",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "npm.start.executor": "Debug",
-    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Harnish\\Documents\\programs\\Git\\lowkey_trello\\client\\node_modules\\prettier",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Jest.Test Suite for login controller.executor&quot;: &quot;Run&quot;,
+    &quot;Jest.test suite for logout controller.Should clear cookie when cookie is sent.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.index.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/index.js&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/Harnish/Documents/programs/Git/lowkey_trello/api/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.start.executor&quot;: &quot;Debug&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Users\\Harnish\\Documents\\programs\\Git\\lowkey_trello\\client\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2024.1.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Harnish\Documents\programs\Git\lowkey_trello\client\src\utils\slice\user" />
@@ -147,7 +147,8 @@
       <workItem from="1721325140144" duration="13163000" />
       <workItem from="1721371641477" duration="46649000" />
       <workItem from="1721457419961" duration="2416000" />
-      <workItem from="1721487965720" duration="13593000" />
+      <workItem from="1721487965720" duration="16459000" />
+      <workItem from="1721629326206" duration="1834000" />
     </task>
     <servers />
   </component>
